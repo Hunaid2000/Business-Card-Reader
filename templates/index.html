@@ -1,0 +1,71 @@
+<html>
+  <head>
+      <title>Business Card Extraction</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex justify-center bg-slate-900">
+      <div class="block p-8 rounded-lg m-10 shadow-2xl bg-white w-[500px]">
+        <h1 class="mb-7 flex justify-center text-slate-900 text-2xl">
+          <b>Business Card Extraction</b>
+        </h1>    
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="mb-4">
+            <input type="file" name="image" class="block w-full p-2 text-gray-700 bg-white bg-clip-padding border border-solid border-slate-900 rounded-md focus:text-gray-700 focus:bg-white focus:border-blue-600" accept="image/*" required>
+          </div>
+          <button type="submit" value="Upload" class="w-full p-3 bg-slate-900 text-white font-medium text-xs uppercase rounded-md shadow-lg hover:bg-slate-700">Upload</button>
+        </form>
+        <div class="w-50 grow p-10 flex flex-col items-center justify-center mb-4">
+          <h1 class="font-bold text-lg mb-2">Detected Card Image</h1>
+          {% if img_tag %}
+            {{ img_tag | safe }}
+          {% else %}
+            <p class="text-red-500 text-xs italic">No image uploaded</p>
+          {% endif %}
+        </div>
+        <table class="mt-5 table-fixed w-full items-center border-collapse text-slate-900">
+          <h1 class="w-50 grow flex flex-col items-center justify-center font-bold text-lg">Extracted Card Information</h1>
+          <tr>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">Category</th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">Value</th>
+          </tr>
+          <tr>
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Name</th>
+            {% if name == None %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Not Found</td>
+            {% else %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs p-4 text-center">{{ name }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Email</th>
+            {% if email == None %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Not Found</td>
+            {% else %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">{{ email }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Phone</th>
+            {% if phone == None %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Not Found</td>
+            {% else %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">{{ phone }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Address</th>
+            {% if address == None %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">Not Found</td>
+            {% else %}
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs  p-4 text-center">{{ address }}</td>
+            {% endif %}
+          </tr>
+        </table>
+        <form action="/extract" method="post">
+          <button type="submit" value="Extract" class="mt-4 w-full p-3 bg-slate-900 text-white font-medium text-xs uppercase rounded-md shadow-lg hover:bg-slate-700">Extract</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
