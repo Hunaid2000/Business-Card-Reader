@@ -14,7 +14,7 @@ The system is developed using Python and Flask and can be deployed/used locally.
 - **Image Pre-processing:** The system uses noise removal and contrast enhancement techniques to improve the accuracy of OCR recognition.
 - **OCR Integration:** The system integrates an OCR engine to recognize the text from the business card.
 - **Field Extraction:** The system extracts necessary information from business cards such as Name, Email, Phone number, and Address.
-- **Flask App Development:** The system is developed using Python and Flask to create a userfriendly web interface.
+- **Flask App Development:** The system is developed using Python and Flask to create a user-friendly web interface.
 - **Output Results:** The system displays the output on the interface and write it to a text file.
 - **Accurate Text Field Detection and Alignment:** The system accurately detectsthe position and alignment of text fields in the image.
 - **Web Interface:** The system has a web interface to select and upload images of business cards.
