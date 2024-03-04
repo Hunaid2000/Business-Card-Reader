@@ -21,7 +21,7 @@ The system is developed using Python and Flask and can be deployed/used locally.
 - **User-Friendly UI:** The system has a user-friendly interface to display the output results in form of table.
 
 ## Software Used
-The proposed system is developed using Python and Flask. Python is a popular programming language for image processing and machine learning, and Flask is a lightweight and easy-touse web framework that enables the development of web applications.
+The proposed system is developed using Python and Flask. Python is a popular programming language for image processing and machine learning, and Flask is a lightweight and easy-to-use web framework that enables the development of web applications.
 
 ## Inputs/Outputs
 The input to the system is an image of a business card uploaded through the web interface. The output consists of the text extracted from the business card displayed on the interface and written to a text file.
