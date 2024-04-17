@@ -28,3 +28,15 @@ The input to the system is an image of a business card uploaded through the web 
 
 ## Deployment
 The system is developed using Python and Flask and can be deployed locally. The system provides a user-friendly interface for selecting and uploading an image of a business card and displays the output on the interface as well as in a text file.
+
+## Instructions
+
+### Install requirements
+```
+pip install -r requirements.txt
+```
+
+### Start Flask App
+```
+python app.py
+```
